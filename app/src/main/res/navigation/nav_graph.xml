@@ -10,13 +10,38 @@
         android:name="com.example.navigationcomponent.FragmentOne"
         android:label="fragment_one"
         tools:layout="@layout/fragment_one" >
+
         <action
             android:id="@+id/action_fragmentOne_to_fragmentTwo"
-            app:destination="@id/fragmentTwo" />
+            app:destination="@id/fragmentTwo"/>
+
+        <action
+            android:id="@+id/action_fragmentOne_to_fragmentFour"
+            app:destination="@id/fragmentFour" />
+
     </fragment>
+
     <fragment
         android:id="@+id/fragmentTwo"
         android:name="com.example.navigationcomponent.FragmentTwo"
         android:label="fragment_two"
-        tools:layout="@layout/fragment_two" />
+        tools:layout="@layout/fragment_two" >
+        <action
+            android:id="@+id/action_fragmentTwo_to_fragmentThree"
+            app:destination="@id/fragmentThree"
+            app:popUpTo="@id/fragmentOne" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/fragmentThree"
+        android:name="com.example.navigationcomponent.FragmentThree"
+        android:label="fragment_three"
+        tools:layout="@layout/fragment_three" />
+
+    <fragment
+        android:id="@+id/fragmentFour"
+        android:name="com.example.navigationcomponent.FragmentFour"
+        android:label="fragment_four"
+        tools:layout="@layout/fragment_four" />
 </navigation>

@@ -20,7 +20,7 @@ public class FragmentOne extends Fragment {
 
     private View rootView;
     private NavController navController;
-    private Button btnGotoSecondFragment;
+    private Button btnGotoSecondFragment, btnGoToFourthFragment;
     private ToolbarManager toolbarManager;
     private Toolbar toolbar;
 
@@ -34,12 +34,19 @@ public class FragmentOne extends Fragment {
 
         toolbar = rootView.findViewById(R.id.toolbar);
         btnGotoSecondFragment = rootView.findViewById(R.id.btnGotoSecondFragment);
+        btnGoToFourthFragment = rootView.findViewById(R.id.btnGoToFourthFragment);
 
         setupToolbar();
 
         btnGotoSecondFragment.setOnClickListener(new View.OnClickListener() {
             @Override public void onClick(View v) {
                 navController.navigate(R.id.action_fragmentOne_to_fragmentTwo);
+            }
+        });
+
+        btnGoToFourthFragment.setOnClickListener(new View.OnClickListener() {
+            @Override public void onClick(View v) {
+                navController.navigate(R.id.action_fragmentOne_to_fragmentFour);
             }
         });
 
